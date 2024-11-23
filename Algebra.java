@@ -32,12 +32,11 @@ public class Algebra {
 		return x1;
 	}
 
-	// Returns x1 - x2
+	// Returns x1 - x2 7 6
 	public static int minus(int x1, int x2) {
-		for(int i=0;i<x2;i++){
+		for(int i=x2;i>=0;i--){
 			x1--;
 		}
-
 		return x1;
 	}
 
@@ -51,10 +50,13 @@ public class Algebra {
 	}
 	
 
-	// Returns x^n (for n >= 0)
+	// Returns x^n (for n >= 0) 5^3 == 5*5*5
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int result=1;
+		for(int i=0;i<n;i++){
+			result = times(result,x);
+		}
+		return result;
 	}
 
 	// Returns the integer part of x1 / x2 
