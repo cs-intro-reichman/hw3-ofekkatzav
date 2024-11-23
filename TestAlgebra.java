@@ -1,6 +1,6 @@
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.IOException;
 
 public class TestAlgebra {
     private static int totalTests = 0;
@@ -59,7 +59,7 @@ public class TestAlgebra {
         boolean test2 = Algebra.minus(2, 7) == -5;
         System.out.println("Test 2 (negative result): " + (test2 ? "PASS" : "FAIL"));
         
-        boolean test3 = Algebra.minus(0, 0) == 0;
+        boolean test3 = Algebra.minus(0, -2) == 2;
         System.out.println("Test 3 (zero subtraction): " + (test3 ? "PASS" : "FAIL"));
         
         boolean test4 = Algebra.minus(100, 50) == 50;
@@ -107,7 +107,7 @@ public class TestAlgebra {
 
     private static int testPow() {
         System.out.println("\nTesting power operations:");
-        totalTests += 6;
+        totalTests += 8;
         
         boolean test1 = Algebra.pow(5, 3) == 125;
         System.out.println("Test 1 (basic power): " + (test1 ? "PASS" : "FAIL"));
@@ -126,9 +126,15 @@ public class TestAlgebra {
         
         boolean test6 = Algebra.pow(-2, 3) == -8;
         System.out.println("Test 6 (negative base): " + (test6 ? "PASS" : "FAIL"));
+        
+        boolean test7 = Algebra.pow(-2, 2) == 4;
+        System.out.println("Test 7 (negative base): " + (test6 ? "PASS" : "FAIL"));
+
+        boolean test8 = Algebra.pow(-8, -2) == 0;
+        System.out.println("Test 8 (negative base): " + (test6 ? "PASS" : "FAIL"));
 
         int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0) + 
-                    (test4 ? 1 : 0) + (test5 ? 1 : 0) + (test6 ? 1 : 0);
+                    (test4 ? 1 : 0) + (test5 ? 1 : 0) + (test6 ? 1 : 0) + (test7 ? 1 : 0) + (test8 ? 1 : 0) ;
         passedTests += passed;
         return passed;
     }

@@ -6,7 +6,7 @@
 public class Algebra {
 	public static void main(String args[]) {
 	    // Tests some of the operations
-	    System.out.println(plus(2,3));   // 2 + 3 5
+	    System.out.println(plus(-2,3));   // 2 + 3 5
 	    System.out.println(minus(7,2));  // 7 - 2 5
    		System.out.println(minus(2,7));  // 2 - 7 -5
  		System.out.println(times(3,4));  // 3 * 4 12
@@ -25,10 +25,14 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
+		
 		for(int i=0;i<x2;i++){
 			x1++;
 		}
-
+		if(x1<=0 && x2<0){
+			for(int i=0 ; i>x2; i--)
+			x1--;
+		}
 		return x1;
 	}
 
@@ -37,15 +41,29 @@ public class Algebra {
 		for(int i=0;i<x2;i++){
 			x1--;
 		}
+		if(x1<=0 && x2<0){
+			for(int i=0 ; i>x2; i--)
+			x1++;
+		}
 		return x1;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		int result = 0;
+		if(x1>0){
 		for(int i=0;i<x1;i++){
 			result = plus(result,x2);
-	}
+		}
+		}
+		
+		else{//(x1<0)
+			x1 = minus(0,x1);
+			for(int i=0;i<x1;i++){
+				result = plus(result,x2);
+			}
+		result = minus(0,result);
+		}
 	return result;
 	}
 	
@@ -56,6 +74,8 @@ public class Algebra {
 		for(int i=0;i<n;i++){
 			result = times(result,x);
 		}
+		if(n<0)
+		result = 0;
 		return result;
 	}
 
@@ -63,15 +83,16 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		if(x2==0)
 			System.out.println("cannot divide by 0");
-
+		
 		int counter=1;
 		int divider=x2;
-
-		while(x1 >= x2){
+		while(pow(x1,2) >= pow(x2,2)){
 			counter++;
 			x2=times(divider,counter);
 		}
 		counter--;
+		if(times(x1,x2)<0)
+			counter = minus(0,counter);
 		return counter;
 	}
 
