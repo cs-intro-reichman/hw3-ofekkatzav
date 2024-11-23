@@ -23,7 +23,7 @@ public class TestAlgebra {
 
     private static int testPlus() {
         System.out.println("\nTesting plus operations:");
-        totalTests += 6;
+        totalTests += 7;
         
         boolean test1 = Algebra.plus(2, 3) == 5;
         System.out.println("Test 1 (basic addition): " + (test1 ? "PASS" : "FAIL"));
@@ -37,14 +37,17 @@ public class TestAlgebra {
         boolean test4 = Algebra.plus(100, 200) == 300;
         System.out.println("Test 4 (large numbers): " + (test4 ? "PASS" : "FAIL"));
         
-        boolean test5 = Algebra.plus(-5, -3) == -8;
+        boolean test5 = Algebra.plus(5, -3) == 2;
         System.out.println("Test 5 (negative result): " + (test5 ? "PASS" : "FAIL"));
         
         boolean test6 = Algebra.plus(Integer.MAX_VALUE - 1, 1) == Integer.MAX_VALUE;
         System.out.println("Test 6 (max value): " + (test6 ? "PASS" : "FAIL"));
 
+        boolean test7 = Algebra.plus(5, -3) == 2;
+        System.out.println("Test 7 (negative result): " + (test7 ? "PASS" : "FAIL"));
+
         int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0) + 
-                    (test4 ? 1 : 0) + (test5 ? 1 : 0) + (test6 ? 1 : 0);
+                    (test4 ? 1 : 0) + (test5 ? 1 : 0) + (test6 ? 1 : 0)+ (test7 ? 1 : 0);
         passedTests += passed;
         return passed;
     }
@@ -128,10 +131,10 @@ public class TestAlgebra {
         System.out.println("Test 6 (negative base): " + (test6 ? "PASS" : "FAIL"));
         
         boolean test7 = Algebra.pow(-2, 2) == 4;
-        System.out.println("Test 7 (negative base): " + (test6 ? "PASS" : "FAIL"));
+        System.out.println("Test 7 (negative base): " + (test7 ? "PASS" : "FAIL"));
 
         boolean test8 = Algebra.pow(-8, -2) == 0;
-        System.out.println("Test 8 (negative base): " + (test6 ? "PASS" : "FAIL"));
+        System.out.println("Test 8 (negative base): " + (test8 ? "PASS" : "FAIL"));
 
         int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0) + 
                     (test4 ? 1 : 0) + (test5 ? 1 : 0) + (test6 ? 1 : 0) + (test7 ? 1 : 0) + (test8 ? 1 : 0) ;

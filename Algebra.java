@@ -25,11 +25,11 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		
+		if((x2 >= 0))
 		for(int i=0;i<x2;i++){
 			x1++;
 		}
-		if(x1<=0 && x2<0){
+		else{//x2<0
 			for(int i=0 ; i>x2; i--)
 			x1--;
 		}
@@ -38,10 +38,11 @@ public class Algebra {
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
+		if(x2 >= 0)
 		for(int i=0;i<x2;i++){
 			x1--;
 		}
-		if(x1<=0 && x2<0){
+		else{//(x2<0)
 			for(int i=0 ; i>x2; i--)
 			x1++;
 		}
@@ -83,7 +84,8 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		if(x2==0)
 			System.out.println("cannot divide by 0");
-		
+		//if((x1>0 && x2>0) || (x1<0 && x2<0) && (x1<x2) || (x2>x1))
+		//	return 0;
 		int counter=1;
 		int divider=x2;
 		while(pow(x1,2) >= pow(x2,2)){
