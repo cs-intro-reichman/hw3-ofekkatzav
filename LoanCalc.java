@@ -67,11 +67,11 @@ public class LoanCalc {
 		double g = (low+high)/2;
 		while((high-low) > epsilon){
 
-			if(endBalance(loan, rate, n, low)*endBalance(loan, rate, n, high) >0)
-				low = g;
-			
-			else
-				high = g;
+				if(endBalance(loan, rate, n, g)*endBalance(loan, rate, n, high) > 0)
+					high = g;
+				
+				else
+					low = g;
 
 			g=(low+high)/2;
 			iterationCounter++;
