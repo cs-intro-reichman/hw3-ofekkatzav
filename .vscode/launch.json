@@ -6,6 +6,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestAnagram",
+            "request": "launch",
+            "mainClass": "TestAnagram",
+            "projectName": "hw3-ofekkatzav_295951a6"
+        },
+        {
+            "type": "java",
+            "name": "Anagram",
+            "request": "launch",
+            "mainClass": "Anagram",
+            "projectName": "hw3-ofekkatzav_295951a6"
+        },
+        {
+            "type": "java",
+            "name": "LoanCalc",
+            "request": "launch",
+            "mainClass": "LoanCalc",
+            "projectName": "hw3-ofekkatzav_295951a6",
+            "args": "10000 5 10"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -31,7 +53,6 @@
             "mainClass": "LoanCalc",
             "projectName": "hw3-ofekkatzav_a61cb845",
             "args": "100000 5 10 "
-
         },
         {
             "type": "java",
