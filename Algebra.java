@@ -32,7 +32,7 @@ public class Algebra {
 		return x1;
 	}
 
-	// Returns x1 - x2 7 6
+	// Returns x1 - x2 1 0 -1 -2 -3 -4 -5 -6
 	public static int minus(int x1, int x2) {
 		for(int i=x2;i>=0;i--){
 			x1--;
