@@ -1,7 +1,7 @@
 // Computes the periodical payment necessary to pay a given loan.
 public class LoanCalc {
 	
-	static double epsilon = 0.0001;  // Approximation accuracy
+	static double epsilon = 0.001;  // Approximation accuracy
 	static int iterationCounter;    // Number of iterations 
 	
 	// Gets the loan data and computes the periodical payment.
@@ -30,7 +30,7 @@ public class LoanCalc {
 	private static double endBalance(double loan, double rate, int n, double payment) {	
 
 		for(int i=0;i<n;i++){
-			loan = (loan - payment)*(1+rate/100);
+			loan = (loan - payment)*(1.0+rate/100);
 		}
 
 		return loan;

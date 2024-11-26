@@ -52,7 +52,7 @@
             "request": "launch",
             "mainClass": "LoanCalc",
             "projectName": "hw3-ofekkatzav_a61cb845",
-            "args": "100000 5 10 "
+            "args": "100000 3 12 "
         },
         {
             "type": "java",
